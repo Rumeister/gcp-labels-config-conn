@@ -1,5 +1,5 @@
 <p align=center vertical-align: middle; padding:20px 0;">
-	<img src="./assets/sada-social.png" width="80%">
+	<img src="./assets/sada-social.png" width="100%">
 </p>
 
 ## Label resources using Terraform export/import
