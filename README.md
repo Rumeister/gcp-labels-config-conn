@@ -41,7 +41,7 @@ For this particular use case, it can be used to update asset labels in an automa
 	```
 	> instance-1
 	
-	-
+	
 	
 	```js
 	resource "google_compute_instance" "instance_2" {
@@ -68,7 +68,7 @@ For this particular use case, it can be used to update asset labels in an automa
 	```
 	> instance-2
 	
-	-
+	
 	
 	```js
 	resource "google_compute_instance" "instance_3" {
@@ -96,7 +96,7 @@ For this particular use case, it can be used to update asset labels in an automa
 	
 	> instance-3
 
-	-
+	
 
 
 4. After updating the labels for your instances (and potentially other assets you'd like to label) all that's left to do is apply the configuration to your existing cloud resources by running ```	terraform plan```
@@ -136,6 +136,7 @@ string: string,
 - Leverage the [instances.get](https://cloud.google.com/compute/docs/reference/rest/v1/instances/get) method. This can be done from the browser to understand the workflow and parameters and automated via code (which is conveniently provided in the API explorer as well). Here is an example:
 
 <img src="./assets/api1.png">
+
 > Notice how the inline cURL, HTTP and Javascript is generated for you as well. This can be used to integrate with existing solutions or to create scripts for automation in bulk.
 	
 - From the output generated in the previous step, grab the _labelFingerprint_ value for the instance. This will be used in the next API call where you will apply the desired label(s).
@@ -152,6 +153,7 @@ string: string,
 - Next, use the [instances.setLabels](https://cloud.google.com/compute/docs/reference/rest/v1/instances/setLabels) method to apply the labels to the instance.
 	
 <img src="./assets/api2.png">
+
 > After receiving a *200* response, your new labels should reflect within the GCP Console.
 	
 <img src="./assets/instance4.png">
